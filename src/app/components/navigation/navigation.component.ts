@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
-  template: './navigation.component.html',
+  templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-
+  @Input() menulist: Array<string>;
   constructor() { }
 
   ngOnInit() {
