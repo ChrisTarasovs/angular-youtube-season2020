@@ -9,6 +9,8 @@ import { FooterComponent } from './containers/footer/footer.component';
 import { SidebarComponent } from './containers/sidebar/sidebar.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { CoreService } from './services/core.service';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { UserComponent } from './features/user/user.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CoreService } from './services/core.service';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    NavigationComponent
+    NavigationComponent,
+    DashboardComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

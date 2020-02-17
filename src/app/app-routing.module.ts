@@ -1,11 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { UserComponent } from './features/user/user.component';
+import { DefaultComponent } from './layouts/default/default.component';
 
 const routes: Routes = [
-  // {
-  //   path: 'dashboard',
-  //   component: %Name of Component%
-  // }
+  {
+    path: '', 
+    component: DefaultComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: 'profile',
+        component: UserComponent
+      }
+    ]
+  },
 ];
 
 @NgModule({
