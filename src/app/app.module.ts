@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http/'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DefaultComponent } from './layouts/default/default.component';
@@ -11,23 +11,32 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { CoreService } from './services/core.service';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { UserComponent } from './features/user/user.component';
+import { EmployeesService } from './services/employees.service';
 
+const SERVICES = [
+  EmployeesService,
+  CoreService
+]
+const COMPONENTS = [
+  AppComponent,
+  DefaultComponent,
+  HeaderComponent,
+  FooterComponent,
+  SidebarComponent,
+  NavigationComponent,
+  DashboardComponent,
+  UserComponent,
+]
 @NgModule({
   declarations: [
-    AppComponent,
-    DefaultComponent,
-    HeaderComponent,
-    FooterComponent,
-    SidebarComponent,
-    NavigationComponent,
-    DashboardComponent,
-    UserComponent
+    ...COMPONENTS,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [CoreService],
+  providers: [...SERVICES],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
