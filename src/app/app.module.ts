@@ -12,11 +12,8 @@ import { CoreService } from './services/core.service';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { UserComponent } from './features/user/user.component';
 import { EmployeesService } from './services/employees.service';
+import { PostComponent } from './features/post/post.component';
 
-const SERVICES = [
-  EmployeesService,
-  CoreService
-]
 const COMPONENTS = [
   AppComponent,
   DefaultComponent,
@@ -26,6 +23,10 @@ const COMPONENTS = [
   NavigationComponent,
   DashboardComponent,
   UserComponent,
+  PostComponent
+];
+const SERVICES = [
+  CoreService, EmployeesService
 ]
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ const COMPONENTS = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [...SERVICES],
   bootstrap: [AppComponent]

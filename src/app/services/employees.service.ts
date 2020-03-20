@@ -7,8 +7,10 @@ import { HttpClient } from '@angular/common/http/';
 export class EmployeesService {
 
   constructor(private http: HttpClient) { }
-
-  getEmployees(){
-    return this.http.get('http://dummy.restapiexample.com/api/v1/employees');
+  getPost(id: string){
+    return this.http.get(`http://jsonplaceholder.typicode.com/posts/${id}`)
+  }
+  getPosts(){
+   return this.http.get('http://jsonplaceholder.typicode.com/posts')
   }
 }

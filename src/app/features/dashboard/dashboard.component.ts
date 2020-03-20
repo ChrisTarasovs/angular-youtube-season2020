@@ -6,19 +6,19 @@ interface EmployeeObj {
   employee_salary: string;
   employee_age: string;
   profile_image: string;
-};
+}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  public employees: Array<EmployeeObj>;
+  public postlist: Array<EmployeeObj>;
   constructor(private employeesService: EmployeesService) { }
 
   ngOnInit() {
-    this.employeesService.getEmployees().subscribe( res => {
-      this.employees = res['data'];
+    this.employeesService.getPosts().subscribe( (resp: any) => {
+      this.postlist = resp
     })
   }
 

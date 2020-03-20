@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { UserComponent } from './features/user/user.component';
 import { DefaultComponent } from './layouts/default/default.component';
+import { PostComponent } from './features/post/post.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent
+      },
+      {
+        path: 'post/:id',
+        component: PostComponent
       },
       {
         path: 'profile',

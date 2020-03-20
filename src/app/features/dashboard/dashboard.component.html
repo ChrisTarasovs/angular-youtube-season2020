@@ -1,9 +1,7 @@
-<p>
-  dashboard works!
-</p>
-<div
-*ngFor="let item of employees"
-> 
-{{item.employee_name}}
-{{item.employee_age}}
+
+<div  
+*ngFor="let item of postlist">
+  <a [routerLink]="['/post/', item.id]">
+    {{item.title }}
+  </a>
 </div>
